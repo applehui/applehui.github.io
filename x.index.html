@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=750,user-scalable=no">
+    <title>相识</title>
+    <style type="text/css">
+        @font-face {
+            font-family: digit;
+        }
+    </style>
+    <link href="./start/default.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <div class="audio">
+        <audio id="music" autoplay loop> 
+          <source src="./start/darling.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+<div id="mainDiv" style="position:relative;width:100%;height: 1334px;">
+    <div id="content" style="position:absolute;float: left; width:100% ;height:680px;left:0;top:0">
+        <div id="code" style="position: absolute; float: left; width: 100%; height: 680px; top: 200px; text-align: center; margin-top: 0px;">
+            <span class="space">
+                    <span class="comments">Hi, girl</span><br>
+                    <span class="comments">Are you ready?</span><br>
+                    <span class="comments"></span><br>
+                    <span class="comments"></span><br>
+                    <span class="comments"></span><br>
+                    <span class="comments"></span><br>
+                    Boy i = <span class="keyword">new</span> Boy(<span class="string">"Mr Gu"</span>);<br>
+                    Girl u = <span class="keyword">new</span> Girl(<span class="string">"Xiao Liu"</span>);<br>
+                    <span class="comments"></span><br>
+                    <span class="comments">在2020的刚开始，</span><br>
+                    <span class="comments">遇见了你，</span><br>
+
+                    <span class="comments">喜欢你就像刚遇见汇编，</span><br>
+                    <span class="comments">关心你的每个寄存器细节，</span><br>
+                    <span class="comments">探索你的每个运行特点，</span><br>
+                    <span class="comments">每块内存我都细心体会，</span><br>
+                    <span class="comments">虽然不懂面向"对象"的奇特之美，</span><br>
+                    <span class="comments">但想每个过程我都在细细品味。</span><br>
+                    <span class="comments"></span><br>
+
+                    <span class="keyword">meetyou()</span> {<br>
+                        <span class="keyword">while</span>(true) {<br>
+                        day = day + 1;<br>
+                        love = love * love;<br>
+                    }<br>
+                    }<br>
+            </span>
+        </div>
+    </div>
+    <div id="loveHeart" style="position:absolute;float: left; width:100% ;height:840px;left:0;top:0px">
+        <canvas id="garden" width="1280" height="840"></canvas>
+        <div id="words" style="position: absolute; text-align: center; top: 840px; left: 0px;">
+            <div id="messages" style="display: none;">
+                故事就这样结束了？......
+                <br>
+                <a href="2.middle.html" id="accept">愿意你就点击</a>
+            </div>
+            <div id="loveu" style="display: block;">
+                <del>你的守护者</del>
+                <br>
+                还能守护啥
+                <br>
+                <div class="signature">- Mr Gu</div><br/>
+                <div class="mark">(P.S. 点击屏幕播放音乐)</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="./start/jquery.js"></script>
+<script type="text/javascript" src="./start/garden.js"></script>
+<script type="text/javascript" src="./start/functions.js"></script>
+<script type="text/javascript">
+        var offsetX = $("#loveHeart").width() / 2;
+        var offsetY = $("#loveHeart").height() / 2 - 55;
+        if (!document.createElement('canvas').getContext) {
+            var msg = document.createElement("div");
+            msg.id = "errorMsg";
+            msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+            document.body.appendChild(msg);
+            $("#code").css("display", "none")
+            $("#copyright").css("position", "absolute");
+            $("#copyright").css("bottom", "10px");
+            document.execCommand("stop");
+        } else {
+            $('body').click(function(){
+                var globalAudio=document.getElementById("music");
+                globalAudio.play();
+            }); 
+
+            setTimeout(function () {
+                adjustWordsPosition();
+                startHeartAnimation();
+            }, 10000);
+
+            adjustCodePosition();
+            $("#code").typewriter();
+            
+            setTimeout(function () {
+                showMessages();
+            }, 64000);
+        }
+</script>
+
+
+</body></html>
